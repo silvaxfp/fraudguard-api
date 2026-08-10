@@ -20,7 +20,8 @@ public class Transaction {
 
     private String device;
 
-    private String status;
+    @Enumerated(EnumType.STRING)
+    private TransactionStatus status;
 
     private LocalDateTime createdAt;
 
@@ -67,11 +68,11 @@ public class Transaction {
     }
 
 
-    public String getStatus() {
+    public TransactionStatus  getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void  setStatus(TransactionStatus status) {
         this.status = status;
     }
 
