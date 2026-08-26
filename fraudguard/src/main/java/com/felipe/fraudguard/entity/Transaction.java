@@ -1,6 +1,8 @@
 package com.felipe.fraudguard.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Positive;
+
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
@@ -14,6 +16,7 @@ public class Transaction {
 
     private Long userId;
 
+    @Positive
     private BigDecimal amount;
 
     private String location;

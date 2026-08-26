@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.felipe.fraudguard.entity.Transaction;
 import com.felipe.fraudguard.service.TransactionService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/transaction")
 public class TransactionController {
@@ -24,7 +26,7 @@ public class TransactionController {
 	}
 	
 @PostMapping
-public Transaction createTransaction(@RequestBody Transaction transaction) {
+public Transaction createTransaction(@RequestBody @Valid Transaction transaction) {
 	return transactionService.saveTransaction(transaction);	
 }
 
